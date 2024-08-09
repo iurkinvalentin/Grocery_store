@@ -49,7 +49,7 @@ Host: 127.0.0.1:8000
 **Ответ:**
 
 {
-    "count": 2,
+```"count": 2,
     "next": null,
     "previous": null,
     "results": [
