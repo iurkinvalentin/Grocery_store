@@ -41,13 +41,13 @@ SQLite (по умолчанию)
 
 ## Список категорий с подкатегориями
 
-```**Запрос:**
+**Запрос:**
 
 GET /api/categories/ HTTP/1.1  
 Host: 127.0.0.1:8000
 
 **Ответ:**
-
+```
 {
     "count": 2,
     "next": null,
@@ -74,7 +74,7 @@ Host: 127.0.0.1:8000
         }
     ]
 }
-
+```
 ## Список продуктов
 
 **Запрос:**
@@ -83,7 +83,7 @@ GET /api/products/ HTTP/1.1
 Host: 127.0.0.1:8000
 
 **Ответ:**
-
+```
 {
     "count": 3,
     "next": null,
@@ -103,7 +103,7 @@ Host: 127.0.0.1:8000
         }
     ]
 }
-
+```
 ## Корзина пользователя
 
 **Запрос на получение содержимого корзины:**
@@ -112,7 +112,7 @@ GET /api/basket/ HTTP/1.1
 Host: 127.0.0.1:8000
 
 **Ответ для непустой корзины:**
-
+```
 {
     "items": [
         "Апельсины",
@@ -121,24 +121,24 @@ Host: 127.0.0.1:8000
     "total_quantity": 5,
     "total_price": 250.00
 }
-
+```
 **Ответ для пустой корзины:**
-
+```
 {
     "message": "Корзина пуста"
 }
-
+```
 **Запрос на очистку корзины:**
 
 DELETE /api/basket/ HTTP/1.1  
 Host: 127.0.0.1:8000
 
 **Ответ:**
-
+```
 {
     "status": "Корзина пуста"
 }
-
+```
 ## Элементы корзины
 
 **Запрос на добавление продукта в корзину:**
@@ -146,14 +146,14 @@ Host: 127.0.0.1:8000
 POST /api/basket/item/ HTTP/1.1  
 Host: 127.0.0.1:8000  
 Content-Type: application/json
-
+```
 {
     "product_id": 1,
     "quantity": 3
 }
-
+```
 **Ответ:**
-
+```
 {
     "id": 1,
     "product": {
@@ -170,9 +170,9 @@ Content-Type: application/json
     },
     "quantity": 3
 }
-
+```
 **Запрос на изменение количества продукта в корзине:**
-
+```
 PATCH /api/basket/item/ HTTP/1.1  
 Host: 127.0.0.1:8000  
 Content-Type: application/json
@@ -181,9 +181,9 @@ Content-Type: application/json
     "product_id": 1,
     "quantity": 5
 }
-
+```
 **Ответ:**
-
+```
 {
     "id": 1,
     "product": {
@@ -200,9 +200,9 @@ Content-Type: application/json
     },
     "quantity": 5
 }
-
+```
 **Запрос на удаление продукта из корзины:**
-
+```
 DELETE /api/basket/item/ HTTP/1.1  
 Host: 127.0.0.1:8000  
 Content-Type: application/json
@@ -210,9 +210,10 @@ Content-Type: application/json
 {
     "product_id": 1
 }
-
+```
 **Ответ:**
-
+```
 {
     "message": "Продукт удален из корзины"
 }
+```
